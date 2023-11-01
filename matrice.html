@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metrics and Analytics</title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <!-- Add Chart.js for circular graph -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4 text-center">View Metrics and Analytics</h1>
+
+        <!-- Metrics Section -->
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title"><i class="fas fa-chart-line"></i> Metrics</h2>
+                        <p class="card-text">Explore key performance metrics for your business.</p>
+                        <a href="#" class="btn btn-primary">View Metrics</a>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Analytics Section with Circular Graph -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title"><i class="fas fa-chart-pie"></i> Analytics</h2>
+                        <p class="card-text">Analyze data and gain insights into user behavior.</p>
+                        <div style="height: 200px;">
+                            <canvas id="analyticsChart"></canvas>
+                        </div>
+                        <a href="#" class="btn btn-primary">View Analytics</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Bootstrap JS and jQuery (make sure to include them at the end of the body) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+        // Create a circular graph using Chart.js
+        var ctx = document.getElementById('analyticsChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Category A', 'Category B', 'Category C'],
+                datasets: [{
+                    data: [30, 45, 25],
+                    backgroundColor: ['#FF5733', '#33FF57', '#3333FF']
+                }]
+            }
+        });
+    </script>
+</body>
+</html>
